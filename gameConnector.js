@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', function() {
+  options=["Game1.html", "Game2.html", "Game3.html"] 
+  var elems = document.querySelectorAll('.carousel');
+  var instances = M.Carousel.init(elems, options);
+});
+
 d3.select("#button1")
  .on("click",() => {
   round=1
