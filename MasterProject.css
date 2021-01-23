@@ -1,0 +1,37 @@
+body{
+    background-color:#000000;
+    color:white;
+}
+.link:hover{
+    text-decoration:underline;
+}
+.red1{
+    background-image:url("https://discovery.sndimg.com/content/dam/images/discovery/fullset/2020/4/2/nightsky2_getty.jpg.rend.hgtvcom.616.411.suffix/1585862428885.jpeg");
+    border-radius:30px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.border{
+    border-width:3px;
+    border-style:solid;
+    border-color:green;
+    border-radius:4px;
+}
+.fixed{
+    position:fixed;
+}
+.Bimg1{
+    background-image:url("https://image.freepik.com/free-vector/cartoon-sunset-sky-gradient-violet-yellow-sky-clouds-landscape-evening-sunset-heaven-panorama-background-illustration-sunset-sky-cartoon-sun-scene-sunrise_229548-568.jpg");
+    height:352px;
+    width:604px;
+}
+label{
+    position: fixed;
+}
+.Bimg2{
+    background-image:url("https://media.istockphoto.com/videos/blue-neon-light-abstract-visual-geometry-motion-graphic-technology-video-id1179960209?s=640x640");
+}
+.obstacle{
+    position: absolute;
+    margin-left:270px;
+}
