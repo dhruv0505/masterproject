@@ -75,3 +75,35 @@ d3.select("#confirm")
     }    
   })
 
+// d3.select("#guess1")
+// .on("keypress", () => {
+//   let guess = d3.select('#guess1').property("value");
+//   if (guess===currentWord || remaining ===1){
+//     if (guess===currentWord){
+//       M.toast({html: `You Won with ${remaining} guesses remaining!`})
+//     }
+//     else{
+//       M.toast({html: `You lost because you had no guesses left!`})
+//     }
+//     d3.select("#button2")
+//     .attr("class","waves-effect waves-light btn");
+//     d3.select("#dguess")
+//       .attr("class", "col s12")
+//     d3.select("#guess")
+//       .attr("class", "hide")
+//     d3.select("#Game2")
+//       .attr("src", "")
+//   }
+//   if (countCowsBulls(guess) !== "Invalid") {
+//     cows=countCowsBulls(guess).cows;
+//     bulls=countCowsBulls(guess).bulls;
+//     CowsBulls="Cows: " + cows + " Bulls: " + bulls
+//     d3.select('#Results').text(CowsBulls);
+//     remaining = remaining -1
+//     if (remaining===0){
+//       remaining=25
+//     }
+//     d3.select('#Remaining').text(`You have ${remaining.toString()} guesses left.`);
+//   }    
+// })
+
