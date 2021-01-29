@@ -12,6 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Tooltip.init(elems, options);
 });
 
+d3.select(".Dark")
+  .on("click",() => {
+  d3.select("body")
+  .transiton()
+  .duration(1000)
+  .attr("class", "Dark1 body")
+  })
+d3.select(".Light")
+  .on("click",() => {
+  d3.select("body")
+  .attr("class", "Light1 body")
+  })
+
+
 d3.select("#button1")
  .on("click",() => {
   round=1

@@ -1,6 +1,18 @@
-body{
+.Dark1{
     background-color:#000000;
     color:white;
+}
+.Light1{
+    background-color:white;
+    color:black;
+}
+.Dark{
+    background-color:#000000;
+    color:white;
+}
+.Light{
+    background-color:white;
+    color:black;
 }
 .link:hover{
     text-decoration:underline;
