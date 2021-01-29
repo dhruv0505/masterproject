@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
 d3.select(".Dark")
   .on("click",() => {
   d3.select("body")
-  .transiton()
-  .duration(1000)
   .attr("class", "Dark1 body")
   })
 d3.select(".Light")
