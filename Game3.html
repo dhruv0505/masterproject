@@ -4,7 +4,9 @@
         <link rel="stylesheet" href="MasterProject.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="gameConnector.js"></script>
         <title>Master Project</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
         <link rel="icon" href="https://media.glassdoor.com/sqll/1825171/juni-learning-squarelogo-1561407710862.png">
     </head>
     <body class="Light1 body">
@@ -14,11 +16,11 @@
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               <a class="waves-effect waves-light btn Dark" ><script src="gameConnector.js"></script>Dark Mode</a>
               <a class="waves-effect waves-light btn Light"><script src="gameConnector.js"></script>Light Mode</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <ul id="nav-mobile" class="right">
                 <li><a href="home.html" class="link">Home</a></li>
                 <li><a href="Game1.html" class="link">Game 1</a></li>
                 <li><a href="Game2.html" class="link">Game 2</a></li>
-                <li><a href="Game3.html" class="link">Game 3</a></li>
+                <li><a href="Game3.html" class="link">Tic-Tac-Toe</a></li>
               </ul>
             </div>
          </nav>
@@ -33,11 +35,100 @@
         </div>
         <hr>
         <br>
-        <div class="container border center purple">
+        <div class="container border center purple Bimg3">
           <br>
-          <a class="waves-effect waves-light btn" id="button3"><script src="gameConnector.js"></script>&nbspStart&nbsp</a>
+          <a class='dropdown-trigger btn red' href='#' id="opp" data-target='dropdown1'>Opponent</a>
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!" id="opponent1">Multiplayer</a></li>
+            <li><a href="#!" id="opponent2">CPU Easy</a></li>
+            <li><a href="#!" id="opponent3">CPU Medium</a></li>
+            <li><a href="#!" id="opponent4">CPU Hard</a></li>
+          </ul>
+          <div class="row center hide" id="multi">  
+            <div class="col s3 m3 l3">
+              <a class='dropdown-trigger btn green P1Icon' href='#' data-target='dropdown2'>Player 1 Icon</a>
+              <ul id='dropdown2' class='dropdown-content'>
+                <li><a href="#!" class="icon1"><i class="material-icons">clear</i></a></li>
+                <li><a href="#!" class="icon2"><i class="material-icons">done</i></a></li>
+                <li><a href="#!" class="icon3"><i class="material-icons">done_all</i></a></li>
+                <li><a href="#!" class="icon4"><i class="material-icons">ac_unit</i></a></li>
+              </ul>
+            </div> 
+            <div class="col s3 m3 l3">
+              <a class='dropdown-trigger btn grey P1Color' href='#' data-target='dropdown3'>Player 1 Color</a>
+              <ul id='dropdown3' class='dropdown-content'>
+                <li class="red"><a href="#!" class="color1 white-text">Red</a></li>
+                <li class="blue"><a href="#!" class="color2 white-text">Blue</a></li>
+                <li class="purple"><a href="#!" class="color3 white-text">Purple</a></li>
+                <li class="black"><a href="#!" class="color4 white-text">Black</a></li>
+              </ul>
+            </div>
+            <div class="col s3 m3 l3">
+              <a class='dropdown-trigger btn green P2Icon' href='#' data-target='dropdown4'>Player 2 Icon</a>
+              <ul id='dropdown4' class='dropdown-content'>
+                <li><a href="#!" class="icon5"><i class="material-icons">clear</i></a></li>
+                <li><a href="#!" class="icon6"><i class="material-icons">done</i></a></li>
+                <li><a href="#!" class="icon7"><i class="material-icons">done_all</i></a></li>
+                <li><a href="#!" class="icon8"><i class="material-icons">ac_unit</i></a></li>
+              </ul>
+            </div> 
+            <div class="col s3 m3 l3">
+              <a class='dropdown-trigger btn grey P2Color' href='#' data-target='dropdown5'>Player 2 Color</a>
+              <ul id='dropdown5' class='dropdown-content'>
+                <li class="red"><a href="#!" class="color5 white-text">Red</a></li>
+                <li class="blue"><a href="#!" class="color6 white-text">Blue</a></li>
+                <li class="purple"><a href="#!" class="color7 white-text">Purple</a></li>
+                <li class="black"><a href="#!" class="color8 white-text">Black</a></li>
+              </ul>
+            </div>    
+          </div>
+          <div class="row center hide" id="CPU">  
+            <div class="col s3 m3 l3">
+              <a class='dropdown-trigger btn green P1Icon2' href='#' data-target='dropdown6'>Icon</a>
+              <ul id='dropdown6' class='dropdown-content'>
+                <li><a href="#!" class="icon9"><i class="material-icons">clear</i></a></li>
+                <li><a href="#!" class="icon10"><i class="material-icons">done</i></a></li>
+                <li><a href="#!" class="icon11"><i class="material-icons">done_all</i></a></li>
+                <li><a href="#!" class="icon12"><i class="material-icons">ac_unit</i></a></li>
+              </ul>
+            </div> 
+            <div class="col s3 m3 l3">
+              <a class='dropdown-trigger btn grey P1Color2' href='#' data-target='dropdown7'>Color</a>
+              <ul id='dropdown7' class='dropdown-content'>
+                <li class="red"><a href="#!" class="color9 white-text">Red</a></li>
+                <li class="blue"><a href="#!" class="color10 white-text">Blue</a></li>
+                <li class="purple"><a href="#!" class="color11 white-text">Purple</a></li>
+                <li class="black"><a href="#!" class="color12 white-text">Black</a></li>
+              </ul>
+            </div> 
+          </div> 
+          <div class="row center hide" id="Preview">
+            <div class="col s6 l6 m6">
+              <i class="material-icons" id="P1Preview"></i>
+            </div>
+            <div class="col s6 l6 m6">
+              <i class="material-icons" id="P2Preview"></i>
+            </div>
+          </div> 
+          <div class="hide grid container">
+            <div class="col1 row1 one" style="align-items:center;justify-content:center;"><script src="Game3.js"></script><i class="material-icons" id="one"></i></div>
+            <div class="col2 row1 two" style="align-items:center;justify-content:center;"><script src="Game3.js"></script><i class="material-icons" id="two"></i></div>
+            <div class="col3 row1 three" style="align-items:center;justify-content:center;"><script src="Game3.js"></script><i class="material-icons" id="three"></i></div>
+            <div class="col1 row2 four" style="align-items:center;justify-content:center;"><script src="Game3.js"></script><i class="material-icons" id="four"></i></div>
+            <div class="col2 row2 five" style="align-items:center;justify-content:center;"><script src="Game3.js"></script><i class="material-icons" id="five"></i></div>
+            <div class="col3 row2 six" style="align-items:center;justify-content:center;"><script src="Game3.js"></script><i class="material-icons" id="six"></i></div>
+            <div class="col1 row3 seven" style="align-items:center;justify-content:center;"><script src="Game3.js"></script><i class="material-icons" id="seven"></i></div>
+            <div class="col2 row3 eight" style="align-items:center;justify-content:center;"><script src="Game3.js"></script><i class="material-icons" id="eight"></i></div>
+            <div class="col3 row3 nine" style="align-items:center;justify-content:center;"><script src="Game3.js"></script><i class="material-icons" id="nine"></i></div>
+
+          </div>   
+          <br>
+          <a class="waves-effect waves-light btn right bottom" style="margin-right: 10px;" id="button3"><script src="gameConnector.js"></script>&nbspNext&nbsp</a>
+          <a class="waves-effect waves-light btn right bottom hide" style="margin-right: 10px;" id="button4"><script src="gameConnector.js"></script>&nbspStart&nbsp</a>
+          <a class="waves-effect waves-light btn right bottom hide" style="margin-right: 10px;" id="button5"><script src="gameConnector.js"></script>&nbspStart&nbsp</a>
           <br></br>
           <script src="" id = "Game3"></script>
+        
         </div>
         <br>
         <h3 class= "center ">How To Play</h3>

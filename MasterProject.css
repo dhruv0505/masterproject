@@ -33,7 +33,7 @@
     position:fixed;
 }
 .Bimg1{
-    background-image:url("https://image.freepik.com/free-vector/cartoon-sunset-sky-gradient-violet-yellow-sky-clouds-landscape-evening-sunset-heaven-panorama-background-illustration-sunset-sky-cartoon-sun-scene-sunrise_229548-568.jpg");
+    background-image:url("https://csshint.com/wp-content/uploads/2020/01/CSS-Animated-Backgrounds-2.gif");
     height:352px;
     width:604px;
 }
@@ -50,3 +50,55 @@ label{
 .tooltipped{
     color:white;
 }
+.Bimg3{
+    background-image:url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
+    width:50%;
+}
+.grid{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.row1{
+    display:flex;
+    height:50px;
+    grid-row-start:1;
+    border-bottom-width: 5px;
+    border-bottom-style:solid;
+    border-bottom-color: black;
+}
+.row2{
+    display:flex;
+    height:50px;
+    grid-row-start:2;
+    border-bottom-width: 5px;
+    border-bottom-style:solid;
+    border-bottom-color: black;
+}
+.row3{
+    display:flex;
+    height:50px;
+    grid-row-start:3;
+}
+.col1{
+    display:flex;
+    width:50px;
+    grid-column-start:7;
+    border-right-width: 5px;
+    border-right-style:solid;
+    border-right-color: black;
+}
+.col2{
+    display:flex;
+    width:50px;
+    grid-column-start:8;
+    border-right-width: 5px;
+    border-right-style:solid;
+    border-right-color: black;
+}
+.col3{
+    display:flex;
+    width:50px;
+    grid-column-start:9;
+}
+
