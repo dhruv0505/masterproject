@@ -141,17 +141,17 @@ function display(icon, color, index1, index2){
         var select2 = "#one"
         var numberClass = "one"
     }
-    else if (index1===1 && index2===0){
+    else if (index1===0 && index2===1){
         var select1 = ".two"
         var select2 = "#two"
         var numberClass = "two"
     }
-    else if (index1===2 && index2===0){
+    else if (index1===0 && index2===2){
         var select1 = ".three"
         var select2 = "#three"
         var numberClass = "three"
     }
-    else if (index1===0 && index2===1){
+    else if (index1===1 && index2===0){
         var select1 = ".four"
         var select2 = "#four"
         var numberClass = "four"
@@ -161,17 +161,17 @@ function display(icon, color, index1, index2){
         var select2 = "#five"
         var numberClass = "five"
     }
-    else if (index1===2 && index2===1){
+    else if (index1===1 && index2===2){
         var select1 = ".six"
         var select2 = "#six"
         var numberClass = "six"
     }
-    else if (index1===0 && index2===2){
+    else if (index1===2 && index2===0){
         var select1 = ".seven"
         var select2 = "#seven"
         var numberClass = "seven"
     }
-    else if (index1===1 && index2===2){
+    else if (index1===2 && index2===1){
         var select1 = ".eight"
         var select2 = "#eight"
         var numberClass = "eight"
@@ -181,7 +181,6 @@ function display(icon, color, index1, index2){
         var select2 = "#nine"
         var numberClass = "nine"
     }
-    alert(numberClass)
     var colorClass =  `row${(index1 + 1).toString()} col${(index2 + 1).toString()} ${color}-text ${numberClass}`
 
     d3.select(select1)
@@ -205,10 +204,18 @@ function checkWin(grid, icon){
   if ((grid[0][0]===icon && grid[1][1]===icon && grid[2][2]===icon) || (grid[2][0]===icon && grid[1][1]===icon && grid[0][2]===icon)){
     return true
     }
+    if (grid[0][0]!=="" && grid[1][0]!=="" && grid[2][0]!=="" && grid[0][1]!=="" && grid[1][1]!=="" && grid[2][1]!=="" && grid[0][2]!=="" && grid[1][2]!=="" && grid[2][2]!==""){
+        end("Tie")
+    }
 }
-  
+
+
 function end(winner){
-    M.toast({html: `Player ${winner} wins!`})
+    if (winner!=="Tie"){
+        M.toast({html: `Player ${winner} wins!`})
+    } 
+    location.reload()
+
 }
 d3.select(".one")
 .on("click",()=>{
@@ -218,7 +225,7 @@ d3.select(".one")
                 display(P1Icon, P1Color, 0, 0)
                 turn=2
             }
-            if (turn===2){
+            else if (turn===2){
                 display(P2Icon, P2Color, 0, 0)
                 turn=1
             }
@@ -250,14 +257,14 @@ d3.select(".one")
 })
 d3.select(".two")
 .on("click",()=>{
-    if (grid[1][0]===""){
+    if (grid[0][1]===""){
         if (opponent==="Multiplayer"){
             if (turn===1){
-                display(P1Icon, P1Color, 1, 0)
+                display(P1Icon, P1Color, 0, 1)
                 turn=2
             }
-            if (turn===2){
-                display(P2Icon, P2Color, 1, 0)
+            else if (turn===2){
+                display(P2Icon, P2Color, 0, 1)
                 turn=1
             }
             if (checkWin(grid, P1Icon)){
@@ -268,7 +275,7 @@ d3.select(".two")
             }
         }
         else{
-            display(P1Icon, P1Color, 1, 0)
+            display(P1Icon, P1Color, 0, 1)
             if (checkWin(grid, P1Icon)){
                 end(1)
             }
@@ -288,14 +295,14 @@ d3.select(".two")
 })
 d3.select(".three")
 .on("click",()=>{
-    if (grid[2][0]===""){
+    if (grid[0][2]===""){
         if (opponent==="Multiplayer"){
             if (turn===1){
-                display(P1Icon, P1Color, 2, 0)
+                display(P1Icon, P1Color, 0, 2)
                 turn=2
             }
-            if (turn===2){
-                display(P2Icon, P2Color, 2, 0)
+            else if (turn===2){
+                display(P2Icon, P2Color, 0, 2)
                 turn=1
             }
             if (checkWin(grid, P1Icon)){
@@ -306,7 +313,7 @@ d3.select(".three")
             }
         }
         else{
-            display(P1Icon, P1Color, 2, 0)
+            display(P1Icon, P1Color, 0, 2)
             if (checkWin(grid, P1Icon)){
                 end(1)
             }
@@ -326,14 +333,14 @@ d3.select(".three")
 })
 d3.select(".four")
 .on("click",()=>{
-    if (grid[0][1]===""){
+    if (grid[1][0]===""){
         if (opponent==="Multiplayer"){
             if (turn===1){
-                display(P1Icon, P1Color, 0, 1)
+                display(P1Icon, P1Color, 1, 0)
                 turn=2
             }
-            if (turn===2){
-                display(P2Icon, P2Color, 0, 1)
+            else if (turn===2){
+                display(P2Icon, P2Color, 1, 0)
                 turn=1
             }
             if (checkWin(grid, P1Icon)){
@@ -344,7 +351,7 @@ d3.select(".four")
             }
         }
         else{
-            display(P1Icon, P1Color, 0, 1)
+            display(P1Icon, P1Color, 1, 0)
             thinkList=think(grid)
             display(P2Icon, P2Color, thinkList[0],thinkList[1]) 
         }
@@ -362,7 +369,7 @@ d3.select(".five")
                 display(P1Icon, P1Color, 1, 1)
                 turn=2
             }
-            if (turn===2){
+            else if (turn===2){
                 display(P2Icon, P2Color, 1, 1)
                 turn=1
             }
@@ -394,87 +401,13 @@ d3.select(".five")
 })
 d3.select(".six")
 .on("click",()=>{
-    if (grid[0][2]===""){
-        if (opponent==="Multiplayer"){
-            if (turn===1){
-                display(P1Icon, P1Color, 2, 1)
-                turn=2
-            }
-            if (turn===2){
-                display(P2Icon, P2Color, 2, 1)
-                turn=1
-            }
-            if (checkWin(grid, P1Icon)){
-                end(1)
-            }
-            if (checkWin(grid, P2Icon)){
-                end(2)
-            }
-        }
-        else{
-            display(P1Icon, P1Color, 2, 1)
-            if (checkWin(grid, P1Icon)){
-                end(1)
-            }
-            else{
-                thinkList=think(grid)
-                display(P2Icon, P2Color, thinkList[0],thinkList[1]) 
-                if (checkWin(grid, P2Icon)){
-                    end(2)
-                }
-            }
-        }
-    }
-    else{
-        M.toast({html: `That spot's taken.`})
-    }  
-})
-d3.select(".seven")
-.on("click",()=>{
-    if (grid[0][2]===""){
-        if (opponent==="Multiplayer"){
-            if (turn===1){
-                display(P1Icon, P1Color, 0, 2)
-                turn=2
-            }
-            if (turn===2){
-                display(P2Icon, P2Color, 0, 2)
-                turn=1
-            }
-            if (checkWin(grid, P1Icon)){
-                end(1)
-            }
-            if (checkWin(grid, P2Icon)){
-                end(2)
-            }
-        }
-        else{
-            display(P1Icon, P1Color, 0, 2)
-            if (checkWin(grid, P1Icon)){
-                end(1)
-            }
-            else{
-                thinkList=think(grid)
-                display(P2Icon, P2Color, thinkList[0],thinkList[1]) 
-                if (checkWin(grid, P2Icon)){
-                    end(2)
-                }
-            }
-        }
-    }
-    else{
-        M.toast({html: `That spot's taken.`})
-    }   
-})
-d3.select(".eight")
-.on("click",()=>{
     if (grid[1][2]===""){
         if (opponent==="Multiplayer"){
             if (turn===1){
                 display(P1Icon, P1Color, 1, 2)
                 turn=2
             }
-            if (turn===2){
+            else if (turn===2){
                 display(P2Icon, P2Color, 1, 2)
                 turn=1
             }
@@ -501,17 +434,91 @@ d3.select(".eight")
     }
     else{
         M.toast({html: `That spot's taken.`})
+    }  
+})
+d3.select(".seven")
+.on("click",()=>{
+    if (grid[2][0]===""){
+        if (opponent==="Multiplayer"){
+            if (turn===1){
+                display(P1Icon, P1Color, 2, 0)
+                turn=2
+            }
+            else if (turn===2){
+                display(P2Icon, P2Color, 2, 0)
+                turn=1
+            }
+            if (checkWin(grid, P1Icon)){
+                end(1)
+            }
+            if (checkWin(grid, P2Icon)){
+                end(2)
+            }
+        }
+        else{
+            display(P1Icon, P1Color, 2, 0)
+            if (checkWin(grid, P1Icon)){
+                end(1)
+            }
+            else{
+                thinkList=think(grid)
+                display(P2Icon, P2Color, thinkList[0],thinkList[1]) 
+                if (checkWin(grid, P2Icon)){
+                    end(2)
+                }
+            }
+        }
+    }
+    else{
+        M.toast({html: `That spot's taken.`})
+    }   
+})
+d3.select(".eight")
+.on("click",()=>{
+    if (grid[2][1]===""){
+        if (opponent==="Multiplayer"){
+            if (turn===1){
+                display(P1Icon, P1Color, 2, 1)
+                turn=2
+            }
+            else if (turn===2){
+                display(P2Icon, P2Color, 2, 1)
+                turn=1
+            }
+            if (checkWin(grid, P1Icon)){
+                end(1)
+            }
+            if (checkWin(grid, P2Icon)){
+                end(2)
+            }
+        }
+        else{
+            display(P1Icon, P1Color, 2, 1)
+            if (checkWin(grid, P1Icon)){
+                end(1)
+            }
+            else{
+                thinkList=think(grid)
+                display(P2Icon, P2Color, thinkList[0],thinkList[1]) 
+                if (checkWin(grid, P2Icon)){
+                    end(2)
+                }
+            }
+        }
+    }
+    else{
+        M.toast({html: `That spot's taken.`})
     }
 })
 d3.select(".nine")
-.on("click",()=>{
+.on("click",()=>{   
     if (grid[2][2]===""){
         if (opponent==="Multiplayer"){
             if (turn===1){
                 display(P1Icon, P1Color, 2, 2)
                 turn=2
             }
-            if (turn===2){
+            else if (turn===2){
                 display(P2Icon, P2Color, 2, 2)
                 turn=1
             }

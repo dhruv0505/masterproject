@@ -306,7 +306,7 @@ d3.select(".color7")
     .on("click",() => {
       d3.select("#Preview").attr("class", "row center")
       d3.select(".P2Color").text("Purple").attr("class","dropdown-trigger btn purple P2Color")
-      d3.select("#P12Preview").attr("class", "material-icons purple-text")
+      d3.select("#P2Preview").attr("class", "material-icons purple-text")
     })
 d3.select(".color8")
   .on("click",() => {
