@@ -1,6 +1,13 @@
 function think(grid){
     if (opponent==="CPU Easy"){
-        return([Math.floor(Math.random()*3),Math.floor(Math.random()*3)])
+    for (var occupied=true;occupied==true;occupied=occupied){
+            var result=[Math.floor(Math.random()*3),Math.floor(Math.random()*3)]
+            if (grid[result[0]][result[1]]===""){
+                occupied=false
+                return (result)
+            }
+        }
+
     }
     if (opponent==="CPU Medium"){
         copyGrid=grid

@@ -1,8 +1,6 @@
 # Master Project Dhruv Lalchandani
 
 ## Overview
-<link rel="stylesheet" href="MasterProject.css">
-<body class="Dark1 body">
   This is a website with a bunch of games you can play! Click below to see the website in Repl.It and CodePen
 
   **[Repl.It Page]()**
