@@ -19,7 +19,7 @@
               <a class="waves-effect waves-light btn Light"><script src="gameConnector.js"></script>Light Mode</a>
               <ul id="nav-mobile" class="right">
                 <li><a href="home.html" class="link">Home</a></li>
-                <li><a href="Game1.html" class="link">Spike Dodger</a></li>
+                <li><a href="Game1.html" class="link">Connect 4</a></li>
                 <li><a href="Game2.html" class="link">Game 2</a></li>
                 <li><a href="Game3.html" class="link">Game 3</a></li>
               </ul>
@@ -31,27 +31,98 @@
          <hr>
         <div class = "red1">
           <br>
-          <h1 class = "center"><a class="tooltipped" data-position="bottom" data-tooltip="Click Start to Begin!">Spike Dodger</a></h1>
+          <h1 class = "center"><a class="tooltipped" data-position="bottom" data-tooltip="Click Start to Begin!">Connect 4</a></h1>
           <br>
         </div>
         <hr>
         <br>
-        <div class="container border center Bimg1">
+        <div class="container border center bImg1">
           <br>
-          <a class="waves-effect waves-light btn" id ="button1"><script src="gameConnector.js"></script>&nbspStart&nbsp</a>
-          <h6 id ="score"></h6>
-          <br></br><br></br><br></br><br></br><br></br>
-          <script src="" id="Game1"></script>
-          <div id="player" class="blue hide" style="height:20px;width:20px;border-radius:3px;margin-left:20px;margin-bottom:-20px;"></div>
-          <span class="material-icons red-text right hide obstacle" id="ob1">star_rate</span>
-          <span class="material-icons red-text right hide obstacle" id="ob2">star_rate</span>
-          <span class="material-icons red-text right hide obstacle" id="ob3">star_rate</span>
-          <span class="material-icons red-text right hide obstacle" id="ob4">star_rate</span>
-          <span class="material-icons red-text right hide obstacle" id="ob5">star_rate</span>
-          <span class="material-icons red-text right hide obstacle" id="ob6">star_rate</span>
-          <br>
+          <script src="" id="Game1"></script> 
+          <div class="row center" id="colorChoose">  
+            <div class="col s6 m6 l6">
+              <a class='dropdown-trigger btn grey C4P1Color' href='#' data-target='dropdown3'>Player 1 Color</a>
+              <ul id='dropdown3' class='dropdown-content'>
+                <li class="red"><a href="#!" class="C4color1 white-text"><script src="gameConnector.js"></script>Red</a></li>
+                <li class="yellow"><a href="#!" class="C4color2 white-text"><script src="gameConnector.js"></script>Yellow</a></li>
+                <li class="purple"><a href="#!" class="C4color3 white-text"><script src="gameConnector.js"></script>Purple</a></li>
+                <li class="black"><a href="#!" class="C4color4 white-text"><script src="gameConnector.js"></script>Black</a></li>
+              </ul>
+            </div>
+            <div class="col s6 m6 l6">
+              <a class='dropdown-trigger btn grey C4P2Color' href='#' data-target='dropdown5'>Player 2 Color</a>
+              <ul id='dropdown5' class='dropdown-content'>
+                <li class="red"><a href="#!" class="C4color5 white-text"><script src="gameConnector.js"></script>Red</a></li>
+                <li class="yellow"><a href="#!" class="C4color6 white-text"><script src="gameConnector.js"></script>Yellow</a></li>
+                <li class="purple"><a href="#!" class="C4color7 white-text"><script src="gameConnector.js"></script>Purple</a></li>
+                <li class="black"><a href="#!" class="C4color8 white-text"><script src="gameConnector.js"></script>Black</a></li>
+              </ul>
+            </div> 
+          </div>
+          <div class="grid2 hide container" style="background-color:blue;border-radius:10px;">
+            <div class="column1">
+              <div class="c1r1 c1 r1 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c1r2 c1 r2 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c1r3 c1 r3 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c1r4 c1 r4 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c1r5 c1 r5 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c1r6 c1 r6 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c1 r7 grey" style="align-items:center;justify-content:center;"><i class="material-icons" style="color:blue;">eject</i></div>
+            </div>
+            <div class="column2">
+              <div class="c2r1 c2 r1 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c2r2 c2 r2 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c2r3 c2 r3 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c2r4 c2 r4 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c2r5 c2 r5 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c2r6 c2 r6 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+            </div>
+            <div class="column3">
+              <div class="c3r1 c3 r1 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c3r2 c3 r2 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c3r3 c3 r3 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c3r4 c3 r4 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c3r5 c3 r5 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c3r6 c3 r6 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+            </div>
+            <div class="column4">
+              <div class="c4r1 c4 r1 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c4r2 c4 r2 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c4r3 c4 r3 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c4r4 c4 r4 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c4r5 c4 r5 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c4r6 c4 r6 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+            </div>
+            <div class="column5">
+              <div class="c5r1 c5 r1 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c5r2 c5 r2 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c5r3 c5 r3 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c5r4 c5 r4 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c5r5 c5 r5 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c5r6 c5 r6 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+            </div>
+            <div class="column6">
+              <div class="c6r1 c6 r1 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c6r2 c6 r2 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c6r3 c6 r3 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c6r4 c6 r4 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c6r5 c6 r5 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c6r6 c6 r6 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+            </div>
+            <div class="column7">
+              <div class="c7r1 c7 r1 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c7r2 c7 r2 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c7r3 c7 r3 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c7r4 c7 r4 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c7r5 c7 r5 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c7r6 c7 r6 grey" style="align-items:center;justify-content:center;border-color:blue;border-radius:100%;"><script src="Game1.js"></script></div>
+              <div class="c7 r7 grey" style="align-items:center;justify-content:center;"><i class="material-icons" style="color:blue;">eject</i></div>
+            </div>
+          </div>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+          <a class="waves-effect waves-light btn right bottom" style="margin-right: 10px;" id="button1"><script src="gameConnector.js"></script>&nbspStart&nbsp</a>
         </div>
         <h3 class= "center">How To Play</h3>
-        <p class= "center">blah blah blah</p>
+        <p class= "center">Try to get 4-in-a-row! On your turn, click a column, and the lowest free spot will become your color!</p>
     </body>
 </html>

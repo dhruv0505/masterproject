@@ -26,17 +26,29 @@ d3.select(".Light")
 
 d3.select("#button1")
  .on("click",() => {
-  round=1
-  score=0
-  d3.select("#button1")
-    .attr("class","hide");
-  d3.select("#player")
-    .attr("class","blue");
-  d3.select("#ob1")
-    .attr("class","material-icons red-text right obstacle");
-  d3.select('#Game1')
-    .attr("src", "Game1.js");
-     })
+  P1Color = d3.select(".C4P1Color").text()
+  P2Color = d3.select(".C4P2Color").text()
+  turn=1
+  if (P1Color==="Player 1 Color" || P2Color==="Player 2 Color"){
+    M.toast({html: "Fill in all the Dropdowns"})
+  }
+  else if(P1Color===P2Color){
+    M.toast({html: "You can't have the same Colors"})
+  }
+  else{
+    grid=[["","","","","",""],["","","","","",""],["","","","","",""],["","","","","",""],["","","","","",""],["","","","","",""],["","","","","",""]]
+    P1Color=P1Color.toLowerCase()
+    P2Color=P2Color.toLowerCase()
+    d3.select("#colorChoose")
+      .attr("class","row center hide");
+    d3.select("#button1")
+      .attr("class", 'hide')
+    d3.select(".grid2")
+      .attr("class", "grid2 container")
+    d3.select('#Game1')
+      .attr("src", "Game1.js");
+  }
+ })
 
 d3.select("#button2")
   .on("click",() => {
@@ -390,7 +402,41 @@ d3.select(".icon12")
       d3.select(".P1Icon").text("Snowflake")
       d3.select("#P1Preview").text("ac_unit")
     })
-    document.addEventListener('DOMContentLoaded', function() {
+
+d3.select(".C4color1")
+    .on("click",()=>{
+      d3.select(".C4P1Color").text("Red").attr("class", "dropdown-trigger btn red C4P1Color")
+    })
+d3.select(".C4color2")
+    .on("click",()=>{
+      d3.select(".C4P1Color").text("Yellow").attr("class", "dropdown-trigger btn yellow C4P1Color")
+    })
+d3.select(".C4color3")
+    .on("click",()=>{
+      d3.select(".C4P1Color").text("Purple").attr("class", "dropdown-trigger btn purple C4P1Color")
+    })
+d3.select(".C4color4")
+    .on("click",()=>{
+      d3.select(".C4P1Color").text("Black").attr("class", "dropdown-trigger btn black C4P1Color")
+    })
+d3.select(".C4color5")
+    .on("click",()=>{
+      d3.select(".C4P2Color").text("Red").attr("class", "dropdown-trigger btn red C4P2Color")
+    })
+d3.select(".C4color6")
+    .on("click",()=>{
+      d3.select(".C4P2Color").text("Yellow").attr("class", "dropdown-trigger btn yellow C4P2Color")
+    })
+d3.select(".C4color7")
+    .on("click",()=>{
+      d3.select(".C4P2Color").text("Purple").attr("class", "dropdown-trigger btn purple C4P2Color")
+    })
+d3.select(".C4color8")
+    .on("click",()=>{
+      d3.select(".C4P2Color").text("Black").attr("class", "dropdown-trigger btn black C4P2Color")
+    })
+
+document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.dropdown-trigger');
   var instances = M.Dropdown.init(elems, options);
 });
