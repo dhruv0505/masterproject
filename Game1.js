@@ -18,16 +18,16 @@ function checkWin(grid, icon){
        return true
      }
    }
-   for (var col=0;col<4;col++){
-      for (var row=0;row<3-col;row++){
-         if (grid[col][row]===icon && grid[col+1][row+1]===icon && grid[col+2][row+2]===icon && grid[col+3][row+3]===icon && grid[col+4][row+4]===icon){
+   for (var col = 0; col<4; col++){
+      for (var row=0;row<3;row++){
+         if (grid[col][row]===icon && grid[col+1][row+1]===icon && grid[col+2][row+2]===icon && grid[col+3][row+3]===icon){
             return true
          }
       }
    }
-   for (var col=7;col>3;col--){
-      for (var row=0;row<3-col;row++){
-         if (grid[col][row]===icon && grid[col-1][row+1]===icon && grid[col-2][row+2]===icon && grid[col-3][row+3]===icon && grid[col-4][row+4]===icon){
+   for (var col = 7; col>3; col--){
+      for (var row=0;row<3;row++){
+         if (grid[col][row]===icon && grid[col-1][row+1]===icon && grid[col-2][row+2]===icon && grid[col-3][row+3]===icon){
             return true
          }
       }
